@@ -35,11 +35,8 @@ function checkUpdateBuild {
 
 	if [[ -f "$DIR/build.info" ]]; then	
 		info=$(head -1 $DIR/build.info)
-		echo $info
 		oldVersion=$(echo "$info" | cut -d':' -f1)
 		oldDate=$(echo "$info" | cut -d':' -f2)
-		echo $oldVersion
-		echo $oldDate
 	else
 		oldVersion=0
 		oldDate=0
