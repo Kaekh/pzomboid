@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  pzomboid:
+    image: kaekh/pzomboid
+    container_name: pzomboid
+    #keep in unless-stopped to restart server when it needs to be updated
+    restart: "unless-stopped"
+    environment:
+      - SERVER_NAME=ServerName
+      - SERVER_PASSWORD=serverpassword
+      - SERVER_ADMIN_PASSWORD=adminpassword
+      - SERVER_PUBLIC_NAME=Public name
+      - RCON_PASSWORD=
+        #ModName separated by ;
+      - MOD_NAMES=
+        #ModId separated by ;
+      - MOD_WORKSHOP_IDS=
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - "16261:16261/udp"
+      - "16262:16262/udp"
+    volumes:
+      - ./yourFolder:/opt/pzserver/Zomboid
