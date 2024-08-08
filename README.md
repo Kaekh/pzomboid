@@ -79,10 +79,10 @@ services:
 
 | Parameter               | Default          | Function                                                        |
 |-------------------------|:----------------:|-----------------------------------------------------------------|
-| `SERVERNAME`            |   `ServerName`   | Name of the server                                              |
-| `SERVER_PASSWORD`       | `serverpassword` | Password to login into server                                   |
-| `SERVER_ADMIN_PASSWORD` | `adminpassword`  | Admin password                                                  |
-| `SERVER_PUBLIC_NAME`    |  `Public name`   | Name will be show when servers are listed in game               |
+| `SERVERNAME`            |   `ServerName`   | name of the server                                              |
+| `SERVER_PASSWORD`       | `serverpassword` | password to login into server                                   |
+| `SERVER_ADMIN_PASSWORD` | `adminpassword`  | admin password                                                  |
+| `SERVER_PUBLIC_NAME`    |  `Public name`   | name will be show when servers are listed in game               |
 | `RCON_PASSWORD`         |        ``        | password to connect with RCON Cli, by default will be generated |
 | `MOD_NAMES`             |        ``        | list of mods names separated by ; check [Modding](https://github.com/Kaekh/pzomboid#modding)   |
 | `MOD_WORKSHOP_IDS`      |        ``        | list of mods ids separated by ; check [Modding](https://github.com/Kaekh/pzomboid#modding)     |
@@ -94,14 +94,14 @@ services:
 
 Mods are supported via steam. To intall them id from workshop and name is needed
 
--   WorkshopID can be found in %Path to your Steam folder%\Steam\steamapps\workshop\content\108600\2169435993\mods\
+-   WorkshopID can be found in %Path to your Steam folder%\Steam\steamapps\workshop\content\108600\2169435993\mods\<br>
      In this example 2169435993 is the Workshop ID
--   ModName can be found in %Path to your Steam folder%\Steam\steamapps\workshop\content\108600\2169435993\mods\ModOptions\mod.info
+-   ModName can be found in %Path to your Steam folder%\Steam\steamapps\workshop\content\108600\2169435993\mods\ModOptions\mod.info<br>
      ModName can be found into the mod.info id=modoptions
 
-To install this mod environment vars must be changed like this:
-MOD_NAMES=modoptions;
-MOD_WORKSHOP_IDS=2169435993;
+To install this mod environment vars must be changed like this:<br>
+MOD_NAMES=modoptions;<br>
+MOD_WORKSHOP_IDS=2169435993;<br>
 
 In case to install multiple mods they have to be separated by ; and have the same order in both vars
 
