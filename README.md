@@ -94,7 +94,7 @@ services:
 
 Mods are supported via steam. To intall them id from workshop and name is needed
 
--   WorkshopID can be found in %Path to your Steam folder%\Steam\steamapps\workshop\content\108600\2169435993\mods\<br>
+-   WorkshopID can be found in %Path to your Steam folder%\Steam\steamapps\workshop\content\108600\2169435993\mods<br>
      In this example 2169435993 is the Workshop ID
 -   ModName can be found in %Path to your Steam folder%\Steam\steamapps\workshop\content\108600\2169435993\mods\ModOptions\mod.info<br>
      ModName can be found into the mod.info id=modoptions
