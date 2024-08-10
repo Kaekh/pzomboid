@@ -1,8 +1,8 @@
-FROM kaekh/steamcmd
+FROM steamcmd/steamcmd
 
 ENV SERVER_NAME=PZserver \
     SERVER_ADMIN_PASSWORD= \
-    SERVER_PUBLIC_NAME="Project Zomboid Docker Server" \ 
+    SERVER_PUBLIC_NAME="Project Zomboid Docker Server" \
     SERVER_PASSWORD= \
     SERVER_PORT=16261 \
     SERVER_UDP_PORT=16262 \
@@ -14,29 +14,32 @@ ENV SERVER_NAME=PZserver \
     MOD_NAMES= \
     MOD_WORKSHOP_IDS= \
     PUID=1000 \
-    PGID=1000 
+    PGID=1000
 
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends --no-install-suggests \
         lib32gcc-s1 \
-        curl \
-	vim \
-	rsync \
-	cron \
-	gosu \
+        vim \
+        cron \
+        gosu \
     && apt-get clean autoclean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
 
 RUN useradd --no-log-init -d /opt/pzserver -s /bin/bash steam && \
-    gosu nobody true; 
+    gosu nobody true;
 
 COPY setup.sh /
 COPY --chown=steam:steam run.sh /opt/pzserver/
 COPY --chown=steam:steam rcon /opt/pzserver/
 COPY --chown=steam:steam updater.sh /opt/pzserver/
+
+WORKDIR /opt/pzserver
+
+# Setup cron job
+RUN (crontab -l ; echo "30 * * * * /opt/pzserver/updater.sh") | crontab
 
 # Expose ports
 EXPOSE $SERVER_PORT/udp

@@ -43,7 +43,7 @@ kaekh/pzomboid:latest
 * `--restart unless-stopped` -> Automatically restarts the container unless the container was manually stopped
 * `--volume` -> Binds the Project Zomboid server folder to the folder you specified
 Allows you to easily access your server files
-* For the environment (`--env`) variables please see [here](https://github.com/Kaekh/pzomboid#environment-variables)
+* For the environment (`--env`) variables please see [here](https://github.com/Kaekh/pzomboid?tab=readme-ov-file#environment-variables)
 * `--publish` -> Specifies the ports that the container exposes<br> 
 </details>
 
@@ -84,8 +84,8 @@ services:
 | `SERVER_ADMIN_PASSWORD` | `adminpassword`  | admin password                                                  |
 | `SERVER_PUBLIC_NAME`    |  `Public name`   | name will be show when servers are listed in game               |
 | `RCON_PASSWORD`         |        ``        | password to connect with RCON Cli, by default will be generated |
-| `MOD_NAMES`             |        ``        | list of mods names separated by ; check [Modding](https://github.com/Kaekh/pzomboid#modding)   |
-| `MOD_WORKSHOP_IDS`      |        ``        | list of mods ids separated by ; check [Modding](https://github.com/Kaekh/pzomboid#modding)     |
+| `MOD_NAMES`             |        ``        | list of mods names separated by ; (check [Modding](https://github.com/Kaekh/pzomboid?tab=readme-ov-file#modding))   |
+| `MOD_WORKSHOP_IDS`      |        ``        | list of mods ids separated by ; check [Modding](https://github.com/Kaekh/pzomboid?tab=readme-ov-file#modding)     |
 | `PGID`                  |      `1000`      | set the group ID of the user the server will run as             |
 | `PUID`                  |      `1000`      | set the user ID of the user the server will run as              |
 
