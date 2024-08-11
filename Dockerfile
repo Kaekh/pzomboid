@@ -36,6 +36,10 @@ COPY --chown=steam:steam run.sh /opt/pzserver/
 COPY --chown=steam:steam rcon /opt/pzserver/
 COPY --chown=steam:steam updater.sh /opt/pzserver/
 
+RUN chmod 755 /setup.sh
+RUN chmod 755 /opt/pzserver/run.sh
+RUN chmod 755 /opt/pzserver/run.sh /opt/pzserver/updater.sh
+
 WORKDIR /opt/pzserver
 
 # Setup cron job
