@@ -107,3 +107,7 @@ In case to install multiple mods they have to be separated by ; and have the sam
 
 
 See more in [Project Zomboid wiki](https://pzwiki.net/wiki/Installing_mods)
+
+## RCON Client
+
+Docker image includes [rcon-cli v0.10.3](https://github.com/gorcon/rcon-cli/releases/tag/v0.10.3) used to interact with server
